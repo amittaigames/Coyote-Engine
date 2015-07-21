@@ -17,10 +17,10 @@ public class Window {
 		
 		
 		if (cg.isGLRender()) {
-			System.out.println("Using OpenGL Rendering");
+			System.out.println("[Coyote] Using OpenGL Rendering");
 			OpenGLWindow.init();
 		} else {
-			System.out.println("Using Software Rendering");
+			System.out.println("[Coyote] Using Software Rendering");
 			SoftwareWindow.init();
 		}
 	}

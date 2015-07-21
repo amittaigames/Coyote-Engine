@@ -8,6 +8,8 @@ import java.awt.image.BufferedImage;
 
 import javax.swing.JFrame;
 
+import org.lwjgl.Sys;
+
 public class SoftwareWindow extends Window {
 
 	private static Canvas canvas;
@@ -16,6 +18,8 @@ public class SoftwareWindow extends Window {
 	private static Graphics drawGraphics;
 	private static Graphics imgGraphics;
 	private static BufferStrategy bs;
+	
+	private static long lastFrame;
 	
 	public static void init() {
 		Dimension size = new Dimension(width, height);
@@ -63,9 +67,10 @@ public class SoftwareWindow extends Window {
 			long now = System.nanoTime();
 			long upd = now - prev;
 			prev = now;
-			int delta = (int) (upd / (float)optimal);
 			lastFps += upd;
 			fps++;
+			
+			int delta = getDelta();
 			
 			if (lastFps >= 1000000000) {
 				//constFPS = fps;
@@ -74,9 +79,11 @@ public class SoftwareWindow extends Window {
 				//System.out.println("FPS: " + constFPS);
 			}
 			
-			cg.update(delta);
-			cg.render(new Render(false));
-			swapBuffers();
+			if (delta > 0) {
+				cg.update(delta);
+				cg.render(new Render(false));
+				swapBuffers();
+			}
 			
 			try {
 				Thread.sleep(Math.abs((prev - System.nanoTime() + optimal) / 1000000));
@@ -84,6 +91,17 @@ public class SoftwareWindow extends Window {
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	private static int getDelta() {
+		long time = getTime();
+		int delta = (int) (time - lastFrame);
+		lastFrame = time;
+		return delta;
+	}
+	
+	private static long getTime() {
+		return (Sys.getTime() * 1000) / Sys.getTimerResolution();
 	}
 	
 	public static Graphics getGraphics() {
