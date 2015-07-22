@@ -15,7 +15,6 @@ public class Window {
 		Window.width = width;
 		Window.cg = cg;
 		
-		
 		if (cg.isGLRender()) {
 			System.out.println("[Coyote] Using OpenGL Rendering");
 			OpenGLWindow.init();

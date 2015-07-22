@@ -7,9 +7,13 @@ public abstract class CoreGame {
 	private boolean GL_RENDER = false;
 	private int FPS = 60;
 	
-	public CoreGame(boolean gl, int fps) {
-		GL_RENDER = gl;
+	public CoreGame(int fps) {
 		FPS = fps;
+		Launcher.start(this);
+	}
+	
+	public void setGLRender() {
+		GL_RENDER = Engine.USING_OPENGL;
 	}
 	
 	public boolean isGLRender() {

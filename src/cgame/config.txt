@@ -1,0 +1,7 @@
+name=Coyote Engine
+version=0.1
+author=Amittai Games
+image=banner.png
+pkg=test
+class=Main
+start=start

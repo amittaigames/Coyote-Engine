@@ -1,20 +1,23 @@
 package test;
 
 import com.amittaigames.coyote.engine.CoreGame;
-import com.amittaigames.coyote.engine.Engine;
 import com.amittaigames.coyote.render.Render;
 import com.amittaigames.coyote.render.Window;
 
 public class Main extends CoreGame {
 
+	private static Main game;
 	int x = 100;
 	
-	public Main(boolean gl, int fps) {
-		super(gl, fps);
+	public Main(int fps) {
+		super(fps);
 	}
 	
 	public static void main(String[] args) {
-		Main game = new Main(Engine.USE_OPENGL_RENDERING, 60);
+		game = new Main(60);
+	}
+	
+	public static void start() {
 		Window.init("Coyote Game Engine v0.1", 800, 600, game);
 	}
 

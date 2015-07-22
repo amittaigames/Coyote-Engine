@@ -5,6 +5,8 @@ import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.GL11;
 
+import com.amittaigames.coyote.engine.Engine;
+
 public class OpenGLWindow extends Window {
 
 	private static long lastFrame;
@@ -13,6 +15,9 @@ public class OpenGLWindow extends Window {
 		try {
 			Display.setDisplayMode(new DisplayMode(width, height));
 			Display.setTitle(title);
+			if (Engine.USING_VSYNC) {
+				Display.setVSyncEnabled(true);
+			}
 			Display.create();
 		} catch (Exception e) {
 			e.printStackTrace();
