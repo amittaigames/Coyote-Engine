@@ -1,6 +1,7 @@
 package com.amittaigames.coyote.render;
 
 import org.lwjgl.Sys;
+import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.GL11;
@@ -17,8 +18,10 @@ public class OpenGLWindow extends Window {
 			Display.setTitle(title);
 			if (Engine.USING_VSYNC) {
 				Display.setVSyncEnabled(true);
+				System.out.println("[Coyote] Using VSync");
 			}
 			Display.create();
+			Keyboard.create();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

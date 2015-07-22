@@ -7,5 +7,14 @@ public class Engine {
 	
 	public static boolean USING_OPENGL = false;
 	public static boolean USING_VSYNC = false;
+	public static boolean START_GAME = false;
+	
+	public static void idle() {
+		try {
+			Thread.sleep(1);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 }

@@ -108,4 +108,12 @@ public class SoftwareWindow extends Window {
 		return drawGraphics;
 	}
 	
+	public static JFrame getWindow() {
+		return frame;
+	}
+	
+	public static Canvas getCanvas() {
+		return canvas;
+	}
+	
 }

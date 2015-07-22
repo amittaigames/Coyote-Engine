@@ -4,8 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -21,9 +19,6 @@ public class Launcher {
 	private static String version;
 	private static String author;
 	private static String image;
-	private static String pkg;
-	private static String cls;
-	private static String start;
 	
 	public static void start(final CoreGame cg) {
 		try {
@@ -32,9 +27,6 @@ public class Launcher {
 			version = br.readLine().split("=")[1];
 			author = br.readLine().split("=")[1];
 			image = br.readLine().split("=")[1];
-			pkg = br.readLine().split("=")[1];
-			cls = br.readLine().split("=")[1];
-			start = br.readLine().split("=")[1];
 			br.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -71,6 +63,17 @@ public class Launcher {
 		frame.setResizable(false);
 		frame.setVisible(true);
 		
+		render.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (!render.getSelectedItem().equals("OpenGL")) {
+					vsync.setEnabled(false);
+				} else {
+					vsync.setEnabled(true);
+				}
+			}
+		});
+		
 		quit.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -84,18 +87,14 @@ public class Launcher {
 				frame.dispose();
 				if (render.getSelectedItem().equals("OpenGL")) {
 					Engine.USING_OPENGL = true;
-					Engine.USING_VSYNC = true;
+					if (vsync.isSelected()) {
+						Engine.USING_VSYNC = true;
+					}
 				} else {
 					Engine.USING_OPENGL = false;
 				}
 				cg.setGLRender();
-				try {
-					Class<?> c = Class.forName(pkg + "." + cls);
-					Method m = c.getDeclaredMethod(Launcher.start);
-					m.invoke(c, (Object[]) null);
-				} catch (ClassNotFoundException | NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e1) {
-					e1.printStackTrace();
-				}
+				Engine.START_GAME = true;
 			}
 		});
 	}
