@@ -1,0 +1,9 @@
+== Credits ==
+
+Jonah A (Gandalf1209) - Contributor
+
+
+== Abbreviations ==
+
+SW - Software
+GL - OpenGL
