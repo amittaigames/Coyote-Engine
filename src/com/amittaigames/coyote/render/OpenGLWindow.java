@@ -45,6 +45,7 @@ public class OpenGLWindow extends Window {
 			Display.sync(cg.getDesiredFPS());
 		}
 		
+		System.out.println("[Coyote] Cleaning up OpenGL...");
 		Display.destroy();
 	}
 	

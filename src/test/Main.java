@@ -22,7 +22,7 @@ public class Main extends CoreGame {
 		while (!Engine.START_GAME) {
 			Engine.idle();
 		}
-		Window.init("Coyote Game Engine v0.1", 800, 600, game);
+		Window.init("Coyote Game Engine v0.5", 800, 600, game);
 	}
 
 	@Override

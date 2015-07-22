@@ -4,10 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/Users/batman/Dev/LWJGL/slick-util.jar"/>
 	<classpathentry kind="lib" path="/Users/batman/Dev/LWJGL/lwjgl-2.9.3/jar/lwjgl_util.jar"/>
-	<classpathentry kind="lib" path="/Users/batman/Dev/LWJGL/lwjgl-2.9.3/jar/lwjgl.jar">
-		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="/Users/batman/Dev/LWJGL/lwjgl-2.9.3/allnative"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="/Users/batman/Dev/LWJGL/lwjgl-2.9.3/jar/lwjgl.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -12,6 +12,7 @@ import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 
+@SuppressWarnings("serial")
 public class WindowBuild extends JFrame {
 
 	private JPanel contentPane;
@@ -35,6 +36,7 @@ public class WindowBuild extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public WindowBuild() {
 		setSize(new Dimension(640, 500));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

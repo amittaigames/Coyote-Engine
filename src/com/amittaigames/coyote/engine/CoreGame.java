@@ -8,6 +8,7 @@ public abstract class CoreGame {
 	private int FPS = 60;
 	
 	public CoreGame(int fps) {
+		Natives.load();
 		FPS = fps;
 		Launcher.start(this);
 	}
