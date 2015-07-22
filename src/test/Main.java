@@ -35,7 +35,7 @@ public class Main extends CoreGame {
 		r.clear(0, 0, 0);
 		
 		r.setColor(0, 122, 163);
-		r.fillRect(x, y, 100, 100);
+		r.drawImage(x, y, "/assets/Player.png");
 	}
 
 	@Override

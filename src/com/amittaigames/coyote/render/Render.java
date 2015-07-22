@@ -23,4 +23,8 @@ public class Render {
 		render.fillRect(x, y, w, h);
 	}
 	
+	public void drawImage(int x, int y, String img) {
+		render.drawImage(x, y, img);
+	}
+	
 }

@@ -39,6 +39,7 @@ public class Launcher {
 		JLabel renderlbl = new JLabel("Rendering");
 		final JComboBox<String> render = new JComboBox<String>(new String[] {"OpenGL", "Software"});
 		final JCheckBox vsync = new JCheckBox("Use VSync");
+		vsync.setSelected(true);
 		JButton start = new JButton("Play");
 		JButton quit = new JButton("Quit");
 		

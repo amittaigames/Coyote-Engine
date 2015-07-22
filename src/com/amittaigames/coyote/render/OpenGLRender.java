@@ -1,6 +1,10 @@
 package com.amittaigames.coyote.render;
 
+import java.io.IOException;
+
 import org.lwjgl.opengl.GL11;
+import org.newdawn.slick.opengl.Texture;
+import org.newdawn.slick.opengl.TextureLoader;
 
 public class OpenGLRender extends CallRender {
 
@@ -15,6 +19,40 @@ public class OpenGLRender extends CallRender {
 		GL11.glColor3f((float)r/255f, (float)g/255f, (float)b/255f);
 	}
 
+	@Override
+	public void drawImage(int x, int y, String img) {
+		GL11.glPushMatrix();
+		
+		Texture texture = null;
+		try {
+			texture = TextureLoader.getTexture("PNG", this.getClass().getResourceAsStream(img));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		texture.bind();
+		
+		GL11.glColor3f(255, 255, 255);
+		
+		GL11.glTexParameterf(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_NEAREST);
+		GL11.glTexParameterf(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MAG_FILTER, GL11.GL_NEAREST);
+		
+		GL11.glBegin(GL11.GL_QUADS);
+		{
+			GL11.glTexCoord2f(0, 0);
+			GL11.glVertex2f(x, y);
+			GL11.glTexCoord2f(1, 0);
+			GL11.glVertex2f(x + texture.getTextureWidth(), y);
+			GL11.glTexCoord2f(1, 1);
+			GL11.glVertex2f(x + texture.getTextureWidth(), y + texture.getTextureHeight());
+			GL11.glTexCoord2f(0, 1);
+			GL11.glVertex2f(x, y + texture.getTextureHeight());
+		}
+		GL11.glEnd();
+		
+		GL11.glPopMatrix();
+	}
+	
 	@Override
 	public void fillRect(int x, int y, int w, int h) {
 		GL11.glPushMatrix();
