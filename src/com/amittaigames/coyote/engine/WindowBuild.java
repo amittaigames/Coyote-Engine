@@ -68,5 +68,9 @@ public class WindowBuild extends JFrame {
 		JCheckBox chckbxUseVsync = new JCheckBox("Use VSync");
 		chckbxUseVsync.setBounds(6, 327, 128, 23);
 		contentPane.add(chckbxUseVsync);
+		
+		JCheckBox chckbxCleanUp = new JCheckBox("Clean up");
+		chckbxCleanUp.setBounds(6, 362, 128, 23);
+		contentPane.add(chckbxCleanUp);
 	}
 }

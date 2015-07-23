@@ -39,7 +39,9 @@ public class Launcher {
 		JLabel renderlbl = new JLabel("Rendering");
 		final JComboBox<String> render = new JComboBox<String>(new String[] {"OpenGL", "Software"});
 		final JCheckBox vsync = new JCheckBox("Use VSync");
+		final JCheckBox clean = new JCheckBox("Clean up resources");
 		vsync.setSelected(true);
+		clean.setSelected(true);
 		JButton start = new JButton("Play");
 		JButton quit = new JButton("Quit");
 		
@@ -49,6 +51,8 @@ public class Launcher {
 		main.add(render);
 		vsync.setBounds(6, 327, 128, 23);
 		main.add(vsync);
+		clean.setBounds(6, 362, 175, 23);
+		main.add(clean);
 		start.setBounds(388, 443, 117, 29);
 		main.add(start);
 		quit.setBounds(517, 443, 117, 29);
@@ -56,7 +60,7 @@ public class Launcher {
 		banner.setBounds(6, 6, 628, 250);
 		main.add(banner);
 		
-		final JFrame frame = new JFrame(name + " by " + author + " - v" + version);
+		final JFrame frame = new JFrame(name + " by " + author + " - v" + version + " - Coyote Game Engine " + Engine.COYOTE_VERSION);
 		frame.setSize(640, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
@@ -69,8 +73,10 @@ public class Launcher {
 			public void actionPerformed(ActionEvent e) {
 				if (!render.getSelectedItem().equals("OpenGL")) {
 					vsync.setEnabled(false);
+					clean.setEnabled(false);
 				} else {
 					vsync.setEnabled(true);
+					clean.setEnabled(true);
 				}
 			}
 		});
@@ -90,6 +96,9 @@ public class Launcher {
 					Engine.USING_OPENGL = true;
 					if (vsync.isSelected()) {
 						Engine.USING_VSYNC = true;
+					}
+					if (clean.isSelected()) {
+						Engine.WILL_CLEAN_UP = true;
 					}
 				} else {
 					Engine.USING_OPENGL = false;
