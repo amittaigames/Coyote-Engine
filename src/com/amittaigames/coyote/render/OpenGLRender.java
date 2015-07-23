@@ -1,21 +1,34 @@
 package com.amittaigames.coyote.render;
 
+import java.awt.Font;
 import java.io.IOException;
 
 import org.lwjgl.opengl.GL11;
+import org.newdawn.slick.TrueTypeFont;
 import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.TextureLoader;
+import org.newdawn.slick.Color;
 
 public class OpenGLRender extends CallRender {
 
+	private static TrueTypeFont font = new TrueTypeFont(new Font("Arial", Font.PLAIN, 16), true);
+	private Color color = Color.black;
+	
 	@Override
 	public void clear(int r, int g, int b) {
 		GL11.glClearColor((float)r/255f, (float)g/255f, (float)b/255f, 1);
 		GL11.glClear(GL11.GL_COLOR_BUFFER_BIT | GL11.GL_DEPTH_BUFFER_BIT);
 	}
+	
+	@Override
+	public void drawText(String text, int x, int y) {
+		Color.white.bind();
+		font.drawString(x, y, text, color);
+	}
 
 	@Override
 	public void setColor(int r, int g, int b) {
+		color = new Color(r, g, b);
 		GL11.glColor3f((float)r/255f, (float)g/255f, (float)b/255f);
 	}
 

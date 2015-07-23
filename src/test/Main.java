@@ -22,7 +22,7 @@ public class Main extends CoreGame {
 		while (!Engine.START_GAME) {
 			Engine.idle();
 		}
-		Window.init("Coyote Game Engine v0.5", 800, 600, game);
+		Window.init("Coyote Game Engine v0.6", 800, 600, game);
 	}
 
 	@Override
@@ -34,8 +34,10 @@ public class Main extends CoreGame {
 	public void render(Render r) {
 		r.clear(0, 0, 0);
 		
-		r.setColor(0, 122, 163);
 		r.drawImage(x, y, "/assets/Player.png");
+		
+		r.setColor(0, 122, 163);
+		r.drawText("Hello World!", 300, 300);
 	}
 
 	@Override

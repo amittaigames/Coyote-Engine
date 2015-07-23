@@ -5,10 +5,15 @@ public class Render {
 	private CallRender render;
 	
 	public Render(boolean gl) {
-		if (gl)
+		if (gl) {
 			render = new OpenGLRender();
-		else
+		} else {
 			render = new SoftwareRender(SoftwareWindow.getGraphics());
+		}
+	}
+	
+	public void drawText(String text, int x, int y) {
+		render.drawText(text, x, y);
 	}
 	
 	public void clear(int r, int g, int b) {
