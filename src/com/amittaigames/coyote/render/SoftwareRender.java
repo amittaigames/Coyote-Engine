@@ -27,6 +27,11 @@ public class SoftwareRender extends CallRender {
 	}
 	
 	@Override
+	public void setFont(String font, int type, int size) {
+		graphics.setFont(new Font(font, type, size));
+	}
+	
+	@Override
 	public void drawText(String text, int x, int y) {
 		graphics.drawString(text, x, y);
 	}

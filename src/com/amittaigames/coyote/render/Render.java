@@ -12,6 +12,10 @@ public class Render {
 		}
 	}
 	
+	public void setFont(String font, int type, int size) {
+		render.setFont(font, type, size);
+	}
+	
 	public void drawText(String text, int x, int y) {
 		render.drawText(text, x, y);
 	}

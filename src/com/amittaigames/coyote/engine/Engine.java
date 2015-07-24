@@ -8,6 +8,7 @@ public class Engine {
 	
 	public static boolean USING_OPENGL = false;
 	public static boolean USING_VSYNC = false;
+	public static boolean USING_ANTI_ALIASING = false;
 	public static boolean WILL_CLEAN_UP = false;
 	public static boolean START_GAME = false;
 	

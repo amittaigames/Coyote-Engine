@@ -9,12 +9,13 @@ import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.TextureLoader;
 
 import com.amittaigames.coyote.engine.CrashHandler;
+import com.amittaigames.coyote.engine.Engine;
 
 import org.newdawn.slick.Color;
 
 public class OpenGLRender extends CallRender {
 
-	private static TrueTypeFont font = new TrueTypeFont(new Font("Arial", Font.PLAIN, 16), true);
+	private static TrueTypeFont font = new TrueTypeFont(new Font("Arial", Font.PLAIN, 16), Engine.USING_ANTI_ALIASING);
 	private Color color = Color.black;
 	
 	@Override
@@ -27,6 +28,11 @@ public class OpenGLRender extends CallRender {
 	public void drawText(String text, int x, int y) {
 		Color.white.bind();
 		font.drawString(x, y, text, color);
+	}
+	
+	@Override
+	public void setFont(String font, int type, int size) {
+		OpenGLRender.font = new TrueTypeFont(new Font(font, type, size), Engine.USING_ANTI_ALIASING);
 	}
 
 	@Override

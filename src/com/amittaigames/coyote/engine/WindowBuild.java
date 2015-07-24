@@ -72,5 +72,9 @@ public class WindowBuild extends JFrame {
 		JCheckBox chckbxCleanUp = new JCheckBox("Clean up");
 		chckbxCleanUp.setBounds(6, 362, 128, 23);
 		contentPane.add(chckbxCleanUp);
+		
+		JCheckBox chckbxAntialiasing = new JCheckBox("Anti-aliasing");
+		chckbxAntialiasing.setBounds(6, 397, 128, 23);
+		contentPane.add(chckbxAntialiasing);
 	}
 }

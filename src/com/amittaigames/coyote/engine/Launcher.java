@@ -40,8 +40,10 @@ public class Launcher {
 		final JComboBox<String> render = new JComboBox<String>(new String[] {"OpenGL", "Software"});
 		final JCheckBox vsync = new JCheckBox("Use VSync");
 		final JCheckBox clean = new JCheckBox("Clean up resources");
+		final JCheckBox alias = new JCheckBox("Use Anti-aliasing");
 		vsync.setSelected(true);
 		clean.setSelected(true);
+		alias.setSelected(true);
 		JButton start = new JButton("Play");
 		JButton quit = new JButton("Quit");
 		
@@ -53,6 +55,8 @@ public class Launcher {
 		main.add(vsync);
 		clean.setBounds(6, 362, 175, 23);
 		main.add(clean);
+		alias.setBounds(6, 397, 150, 23);
+		main.add(alias);
 		start.setBounds(388, 443, 117, 29);
 		main.add(start);
 		quit.setBounds(517, 443, 117, 29);
@@ -74,9 +78,11 @@ public class Launcher {
 				if (!render.getSelectedItem().equals("OpenGL")) {
 					vsync.setEnabled(false);
 					clean.setEnabled(false);
+					alias.setEnabled(false);
 				} else {
 					vsync.setEnabled(true);
 					clean.setEnabled(true);
+					alias.setSelected(true);
 				}
 			}
 		});
@@ -99,6 +105,9 @@ public class Launcher {
 					}
 					if (clean.isSelected()) {
 						Engine.WILL_CLEAN_UP = true;
+					}
+					if (alias.isSelected()) {
+						Engine.USING_ANTI_ALIASING = true;
 					}
 				} else {
 					Engine.USING_OPENGL = false;
