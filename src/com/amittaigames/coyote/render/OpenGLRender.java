@@ -7,6 +7,9 @@ import org.lwjgl.opengl.GL11;
 import org.newdawn.slick.TrueTypeFont;
 import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.TextureLoader;
+
+import com.amittaigames.coyote.engine.CrashHandler;
+
 import org.newdawn.slick.Color;
 
 public class OpenGLRender extends CallRender {
@@ -40,7 +43,7 @@ public class OpenGLRender extends CallRender {
 		try {
 			texture = TextureLoader.getTexture("PNG", this.getClass().getResourceAsStream(img));
 		} catch (IOException e) {
-			e.printStackTrace();
+			CrashHandler.init(e);
 		}
 		
 		texture.bind();

@@ -29,7 +29,7 @@ public class Launcher {
 			image = br.readLine().split("=")[1];
 			br.close();
 		} catch (Exception e) {
-			e.printStackTrace();
+			CrashHandler.init(e);
 		}
 		
 		JPanel main = new JPanel();

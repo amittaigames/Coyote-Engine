@@ -23,7 +23,7 @@ public class Input implements KeyListener {
 			try {
 				Keyboard.create();
 			} catch (LWJGLException e) {
-				e.printStackTrace();
+				CrashHandler.init(e);
 			}
 		}
 		Arrays.fill(keys, false);

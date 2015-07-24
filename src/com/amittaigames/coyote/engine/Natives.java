@@ -23,7 +23,7 @@ public class Natives {
 			System.out.println("[Coyote] Loading natives...");
 			System.setProperty("org.lwjgl.librarypath", natives.getAbsolutePath());
 		} catch (Exception e) {
-			e.printStackTrace();
+			CrashHandler.init(e);
 		}
 	}
 	

@@ -8,6 +8,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import com.amittaigames.coyote.engine.CrashHandler;
+
 public class SoftwareRender extends CallRender {
 	
 	private Graphics graphics;
@@ -35,7 +37,7 @@ public class SoftwareRender extends CallRender {
 			BufferedImage buf = ImageIO.read(this.getClass().getResourceAsStream(img));
 			graphics.drawImage(buf, x, y, null);
 		} catch (IOException e) {
-			e.printStackTrace();
+			CrashHandler.init(e);
 		}
 	}
 

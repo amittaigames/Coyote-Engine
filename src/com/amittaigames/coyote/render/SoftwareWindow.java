@@ -10,6 +10,8 @@ import javax.swing.JFrame;
 
 import org.lwjgl.Sys;
 
+import com.amittaigames.coyote.engine.CrashHandler;
+
 public class SoftwareWindow extends Window {
 
 	private static Canvas canvas;
@@ -88,7 +90,7 @@ public class SoftwareWindow extends Window {
 			try {
 				Thread.sleep(Math.abs((prev - System.nanoTime() + optimal) / 1000000));
 			} catch (Exception e) {
-				e.printStackTrace();
+				CrashHandler.init(e);
 			}
 		}
 	}

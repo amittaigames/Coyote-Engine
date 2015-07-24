@@ -15,7 +15,7 @@ public class Engine {
 		try {
 			Thread.sleep(1);
 		} catch (Exception e) {
-			e.printStackTrace();
+			CrashHandler.init(e);
 		}
 	}
 	

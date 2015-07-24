@@ -6,6 +6,7 @@ import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.GL11;
 
+import com.amittaigames.coyote.engine.CrashHandler;
 import com.amittaigames.coyote.engine.Engine;
 
 public class OpenGLWindow extends Window {
@@ -23,7 +24,7 @@ public class OpenGLWindow extends Window {
 			Display.create();
 			Keyboard.create();
 		} catch (Exception e) {
-			e.printStackTrace();
+			CrashHandler.init(e);
 		}
 		
 		start();
