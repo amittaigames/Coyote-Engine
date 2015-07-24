@@ -41,6 +41,9 @@ public class CrashHandler {
 		sb.append("Coyote Engine just crashed and burned.\n");
 		sb.append("Sorry! :(\n\n");
 		sb.append("=== Helpful Info ===\n\n");
+		for (int i = 0; i < e.getStackTrace().length; i++) {
+			sb.append(e.getStackTrace()[i].toString() + "\n");
+		}
 		sb.append("Type: " + e.getClass().getSimpleName() + "\n");
 		sb.append("Message: " + e.getMessage() + "\n");
 		sb.append("Cause: " + e.getCause() + "\n\n");

@@ -1,5 +1,6 @@
 package test;
 
+import com.amittaigames.coyote.engine.Audio;
 import com.amittaigames.coyote.engine.CoreGame;
 import com.amittaigames.coyote.engine.Engine;
 import com.amittaigames.coyote.engine.Input;
