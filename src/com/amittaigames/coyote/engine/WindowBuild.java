@@ -1,16 +1,16 @@
 package com.amittaigames.coyote.engine;
 
+import java.awt.Dimension;
 import java.awt.EventQueue;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.Dimension;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
 
 @SuppressWarnings("serial")
 public class WindowBuild extends JFrame {

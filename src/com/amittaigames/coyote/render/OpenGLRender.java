@@ -4,14 +4,13 @@ import java.awt.Font;
 import java.io.IOException;
 
 import org.lwjgl.opengl.GL11;
+import org.newdawn.slick.Color;
 import org.newdawn.slick.TrueTypeFont;
 import org.newdawn.slick.opengl.Texture;
 import org.newdawn.slick.opengl.TextureLoader;
 
 import com.amittaigames.coyote.engine.CrashHandler;
 import com.amittaigames.coyote.engine.Engine;
-
-import org.newdawn.slick.Color;
 
 public class OpenGLRender extends CallRender {
 

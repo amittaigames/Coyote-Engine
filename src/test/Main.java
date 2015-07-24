@@ -1,7 +1,5 @@
 package test;
 
-import java.awt.Font;
-
 import com.amittaigames.coyote.engine.CoreGame;
 import com.amittaigames.coyote.engine.Engine;
 import com.amittaigames.coyote.engine.Input;

@@ -4,7 +4,7 @@ public class Engine {
 
 	public static final boolean USE_OPENGL_RENDERING = true;
 	public static final boolean USE_SOFTWARE_RENDERING = false;
-	public static final String COYOTE_VERSION = "Build 009";
+	public static final String COYOTE_VERSION = "Build 013";
 	
 	public static boolean USING_OPENGL = false;
 	public static boolean USING_VSYNC = false;
