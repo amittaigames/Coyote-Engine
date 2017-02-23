@@ -1,3 +1,7 @@
+## NOTE:
+
+This is now an obselete project! I still have it here because I like some of the concepts I came up with, and the way I implemented them.
+
 # Coyote Engine
 
 Coyote Engine is an Open Source Java Game Engine for both beginners and advanced programmers.
